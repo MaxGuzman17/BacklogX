@@ -1,0 +1,135 @@
+/* config global */
+:root {
+    --gaming-primary: #6366f1;
+    --gaming-accent: #10b981; 
+    --card-bg: #1a1a1a;
+    --dark-bg: #0b0b10;
+}
+
+body {
+    background: linear-gradient(90deg, #0b0b10, #200b0b);
+    padding-top: 100px;
+    color: white;
+}
+
+/* navbar */
+.navbar-backlog {
+    background-color: rgba(15, 15, 15, 0.85) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--gaming-primary);
+    padding: 0.8rem 0;
+}
+
+.navbar-brand {
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 1.5rem;
+}
+
+.text-primary { color: var(--gaming-primary) !important; }
+
+.nav-link {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #a0a0a0 !important;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #fff !important;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+/* buscador */
+.buscador-nav {
+    background-color: #252525 !important;
+    border: 1px solid #444 !important;
+    color: white !important;
+    border-radius: 20px;
+    padding-left: 1.2rem;
+    padding-right: 2.5rem;
+    transition: width 0.4s ease, border-color 0.3s ease;
+    width: 250px;
+}
+
+.buscador-nav:focus {
+    border-color: var(--gaming-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+    width: 300px;
+}
+
+/* Cards unificado */
+.transicion-hover {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.transicion-hover:hover {
+    transform: translateY(-10px);
+    border-color: var(--gaming-primary) !important;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2) !important;
+}
+
+.card-img {
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+}
+
+.transicion-hover:hover .card-img {
+    filter: brightness(1.1);
+}
+
+/* selects */
+.estado-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .estado-badge.active {
+    opacity: 1;
+}
+
+.select-estado-juego {
+    background-color: #2d2d2d !important;
+    color: white !important;
+    border: 1px solid #444 !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.select-estado-juego:hover {
+    border-color: var(--gaming-primary) !important;
+}
+
+/* 6. PAGINACIÓN */
+.page-item.active .page-link {
+    background-color: var(--gaming-primary) !important;
+    border-color: var(--gaming-primary) !important;
+    color: white !important;
+}
+
+.page-link {
+    background-color: #1a1a1a !important;
+    color: #a0a0a0 !important;
+    border: 1px solid #444 !important;
+}
+
+.page-link:hover {
+    background-color: #4f46e5 !important;
+    color: white !important;
+}

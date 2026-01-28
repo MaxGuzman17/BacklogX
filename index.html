@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Games | BacklogX</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-dark text-white">
+    <nav class="navbar navbar-expand-md fixed-top navbar-backlog shadow-lg" role="navigation">
+        <div class="container">
+            <div class="d-flex flex-grow-1" style="flex-basis: 0;">
+                <a class="navbar-brand fw-black fs-3 m-0" href="./index.html">
+                    <span class="text-primary">BACKLOG</span><span class="text-white">X</span>
+                </a>
+            </div>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNav">
+                <div class="offcanvas-header border-bottom border-secondary">
+                    <h5 class="offcanvas-title fw-bold">MENÚ</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body d-md-flex align-items-center w-100">
+                    <ul class="navbar-nav mx-auto gap-md-4 text-center">
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold px-3" href="index.html">EXPLORAR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold px-3" href="./pages/miBacklog.html">MI BACKLOG</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex justify-content-md-end mt-4 mt-md-0 flex-grow-1" style="flex-basis: 0;">
+                        <form class="position-relative w-100" style="max-width: 250px;" role="search">
+                            <input class="form-control buscador-nav ps-3" type="search" id="buscador"
+                                placeholder="Buscar juegos..." aria-label="Search">
+                            <i
+                                class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="container flex-grow-1 mt-5 pt-5">
+        <header class="text-center py-5">
+            <h1 class="display-4 fw-black text-white">DESCUBRE TU PRÓXIMA <span class="text-primary">AVENTURA</span>
+            </h1>
+            <p class="text-secondary fs-5">Explora miles de títulos y gestiona tu colección personal.</p>
+        </header>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedorCards">
+            <!-- aca se cargan los juegos -->
+        </div>
+
+        <!-- Paginación hasta 4 -->
+        <nav class="my-5" aria-label="Navegación de juegos">
+            <ul class="pagination justify-content-center" id="paginacion">
+                <!-- aca se generan los botones de paginación -->
+            </ul>
+        </nav>
+    </main>
+    <footer class="bg-black text-light mt-auto border-top border-primary border-opacity-25">
+        <div class="container py-5">
+            <div class="row gy-4 text-center text-md-start">
+                <!-- Marca -->
+                <div class="col-md-4">
+                    <a class="navbar-brand fw-black fs-4 d-block mb-3" href="#">
+                        <span class="text-primary">BACKLOG</span>X
+                    </a>
+                    <p class="text-secondary small pe-md-4">
+                        La plataforma definitiva para organizar tu biblioteca de videojuegos. No dejes que tus juegos se
+                        queden en el olvido, dales un lugar en tu BacklogX.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div class="col-md-4">
+                    <h6 class="fw-bold text-white mb-3">NAVEGACIÓN</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html"
+                                class="text-primary text-decoration-none hover-primary">Explorar Catálogo</a></li>
+                        <li class="mb-2"><a href="./pages/miBacklog.html"
+                                class="text-secondary text-decoration-none hover-primary">Mi Biblioteca</a></li>
+                        <li class="mb-2"><a href="https://rawg.io" target="_blank"
+                                class="text-secondary text-decoration-none hover-primary">RAWG API</a></li>
+                    </ul>
+                </div>
+
+                <!-- Redes y Contacto -->
+                <div class="col-md-4 text-md-end">
+                    <h6 class="fw-bold text-white mb-3">COMUNIDAD</h6>
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3 mb-4">
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle"><i
+                                class="bi bi-discord"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle"><i
+                                class="bi bi-twitch"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle"><i
+                                class="bi bi-instagram"></i></a>
+                    </div>
+                    <p class="small text-secondary mb-0">¿Sugerencias? <a href="mailto:hola@backlogx.com"
+                            class="text-primary text-decoration-none">Escríbenos</a></p>
+                </div>
+            </div>
+
+            <hr class="border-secondary opacity-25 my-4">
+
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-secondary">
+                <span>© 2026 <strong>BacklogX</strong>. Desarrollado con y para gamers.</span>
+                <div class="d-flex gap-4">
+                    <a href="#" class="text-reset text-decoration-none">Privacidad</a>
+                    <a href="#" class="text-reset text-decoration-none">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+
+
+</body>
+
+</html>
