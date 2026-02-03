@@ -64,10 +64,10 @@ async function renderJuegos() {
                         </div>
 
                         ${existeEnBacklog
-                            ? `<button class="btn btn-secondary w-100 disabled py-2 fw-bold">
+                    ? `<button class="btn btn-secondary w-100 disabled py-2 fw-bold">
                                     GESTIONAR EN BACKLOG
                                 </button>`
-                            : `<div class="mt-auto">
+                    : `<div class="mt-auto">
                                     <label class="small text-secondary mb-2 fw-bold">AÑADIR A MI LISTA:</label>
                                     <select class="form-select select-estado-juego" data-game-id="${game.id}">
                                         <option value="" selected disabled>Seleccionar estado...</option>
@@ -76,11 +76,11 @@ async function renderJuegos() {
                                         <option value="COMPLETADOS">🏆 Completado</option>
                                     </select>
                                 </div>`
-                        }
+                }
                     </div>
                 </div>`;
-            
-                //evento para guardar
+
+            //evento para guardar
             if (!existeEnBacklog) {
                 const select = card.querySelector(".select-estado-juego");
                 select.addEventListener("change", (e) => {
@@ -88,7 +88,7 @@ async function renderJuegos() {
                     agregarAlBacklog(game, status);
 
                     // Feedback visual rapido
-                    renderJuegos(); 
+                    renderJuegos();
                 });
             }
             contenedor.appendChild(card);
@@ -107,6 +107,25 @@ function agregarAlBacklog(game, status) {
     const juegoGuardar = { ...game, status: status };
 
     miBacklog.push(juegoGuardar);
+    // Notificación con libreria
+    Toastify({
+        text: `🎮 ${game.name} añadido a ${status.toUpperCase()}`,
+        duration: 3000,
+        gravity: "bottom", // Lo ponemos abajo para no tapar el Nav
+        position: "right",
+        stopOnFocus: true,
+        className: "toast-gaming", // Clase personalizada para el CSS
+        style: {
+            background: "rgba(30, 30, 40, 0.9)",
+            color: "#ffffff",
+            borderLeft: "5px solid #6366f1", // Tu color --gaming-primary
+            backdropFilter: "blur(10px)",
+            boxShadow: "0 8px 24px rgba(99, 102, 241, 0.3)",
+            borderRadius: "12px",
+            fontWeight: "bold",
+            fontSize: "0.9rem"
+        }
+    }).showToast();
     localStorage.setItem("miBacklog", JSON.stringify(miBacklog));
 }
 

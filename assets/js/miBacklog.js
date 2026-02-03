@@ -84,15 +84,46 @@ function createBacklogCard(game) {
 // --- eliminar y cambiar estado ---
 document.getElementById("backlogContenedor").addEventListener("click", (e) => {
     const btn = e.target.closest(".delete-btn");
-
     if (btn) {
-        const id = parseInt(btn.dataset.id)
-        let lista = obtenerBacklog();
-        lista = lista.filter(j => j.id !== id);
-        guardarBacklog(lista);
-        renderBacklog(currentFilter);
+        const id = parseInt(btn.dataset.id);
+        const nombreJuego = btn.closest(".card-body").querySelector(".card-title").innerText;
+
+        // Configuración de SweetAlert
+        Swal.fire({
+            title: `¿Estás seguro?`,
+            text: `Se quitará ${nombreJuego} de tu biblioteca personal.`,
+            icon: "warning",
+            showCancelButton: true,
+            background: "#1a1a1a",
+            color: "#ffffff",
+            confirmButtonColor: "#6366f1",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "Cancelar",
+            backdrop: `rgba(0,0,0,0.6)`
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Lógica de eliminación
+                let lista = obtenerBacklog();
+                lista = lista.filter(j => j.id !== id);
+                guardarBacklog(lista);
+                renderBacklog(currentFilter);
+
+                //Confirmación 
+                Swal.fire({
+                    title: "¡Eliminado!",
+                    icon: "success",
+                    background: "#1a1a1a",
+                    color: "#ffffff",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
     }
 });
+
+
 
 document.getElementById("backlogContenedor").addEventListener("change", (e) => {
     if (e.target.classList.contains("status-select")) {
@@ -100,9 +131,32 @@ document.getElementById("backlogContenedor").addEventListener("change", (e) => {
         const nuevoEstado = e.target.value;
         let lista = obtenerBacklog();
 
+        const juego = lista.find(j => j.id === id);
+        const nombreJuego = juego ? juego.name : "Juego";
+
+
         lista = lista.map(j => j.id === id ? { ...j, status: nuevoEstado } : j);
         guardarBacklog(lista);
         renderBacklog(currentFilter); // Recargar para aplicar filtros si es necesario
+
+        Toastify({
+            text: `🚀 ${nombreJuego} movido a ${nuevoEstado.toUpperCase()}`,
+            duration: 3000,
+            gravity: "bottom",
+            position: "right",
+            stopOnFocus: true,
+            className: "toast-gaming",
+            style: {
+                background: "rgba(30, 30, 40, 0.9)",
+                color: "#ffffff",
+                borderLeft: "5px solid #6366f1",
+                backdropFilter: "blur(10px)",
+                boxShadow: "0 8px 24px rgba(99, 102, 241, 0.3)",
+                borderRadius: "12px",
+                fontWeight: "bold",
+                fontSize: "0.9rem"
+            }
+        }).showToast();
 
         //si se cambia el estado y no esta en el filtro "todos", el juego desaparece de la vista actual
         renderBacklog(currentFilter);

@@ -7,46 +7,47 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Games | BacklogX</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-dark text-white">
-    <nav class="navbar navbar-expand-md fixed-top navbar-backlog shadow-lg" role="navigation">
+    <nav class="navbar navbar-expand-md fixed-top navbar-backlog shadow-lg navbar-dark" role="navigation">
         <div class="container">
+            <!--Logo -->
             <div class="d-flex flex-grow-1" style="flex-basis: 0;">
-                <a class="navbar-brand fw-black fs-3 m-0" href="./index.html">
-                    <span class="text-primary">BACKLOG</span><span class="text-white">X</span>
+                <a class="navbar-brand fw-black fs-3" href="index.html">
+                    <span class="text-primary">BACKLOG</span>X
                 </a>
             </div>
 
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNav">
+            <!-- boton hamburguesa -->
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navPrincipal">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNav">
-                <div class="offcanvas-header border-bottom border-secondary">
-                    <h5 class="offcanvas-title fw-bold">MENÚ</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-                </div>
-                <div class="offcanvas-body d-md-flex align-items-center w-100">
-                    <ul class="navbar-nav mx-auto gap-md-4 text-center">
-                        <li class="nav-item">
-                            <a class="nav-link active fw-bold px-3" href="index.html">EXPLORAR</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold px-3" href="./pages/miBacklog.html">MI BIBLIOTECA</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex justify-content-md-end mt-4 mt-md-0 flex-grow-1" style="flex-basis: 0;">
-                        <form class="position-relative d-flex justify-content-end w-100" role="search">
-                            <input class="form-control buscador-nav ps-3" type="search" id="buscador"
-                                placeholder="Buscar juegos..." aria-label="Search">
-                            <i
-                                class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
-                        </form>
-                    </div>
+            <!-- colapso -->
+            <div class="collapse navbar-collapse" id="navPrincipal">
+                <!-- Enlaces -->
+                <ul class="navbar-nav mx-auto gap-md-4 text-center my-3 my-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold px-3" href="index.html">EXPLORAR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold px-3" href="./pages/miBacklog.html">MI BIBLIOTECA</a>
+                    </li>
+                </ul>
+
+                <!-- buscador -->
+                <div class="d-flex justify-content-md-end flex-grow-1" style="flex-basis: 0;">
+                    <form class="position-relative w-100" style="max-width: 300px;" role="search">
+                        <input class="form-control buscador-nav ps-3" type="search" id="buscador"
+                            placeholder="Buscar juegos..." aria-label="Search">
+                        <i
+                            class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
+                    </form>
                 </div>
             </div>
         </div>
@@ -128,6 +129,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/js/main.js"></script>
 
 
