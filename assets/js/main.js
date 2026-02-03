@@ -65,7 +65,7 @@ async function renderJuegos() {
 
                         ${existeEnBacklog
                             ? `<button class="btn btn-secondary w-100 disabled py-2 fw-bold">
-                                    <i class="bi bi-check2-all me-2"></i>GESTIONAR EN BACKLOG
+                                    GESTIONAR EN BACKLOG
                                 </button>`
                             : `<div class="mt-auto">
                                     <label class="small text-secondary mb-2 fw-bold">AÑADIR A MI LISTA:</label>

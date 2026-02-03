@@ -104,7 +104,7 @@ document.getElementById("backlogContenedor").addEventListener("change", (e) => {
         guardarBacklog(lista);
         renderBacklog(currentFilter); // Recargar para aplicar filtros si es necesario
 
-        //si se cambia el estado y No esta en el filtro all, el juego desaparece de la vista actual
+        //si se cambia el estado y no esta en el filtro "todos", el juego desaparece de la vista actual
         renderBacklog(currentFilter);
     }
 });
