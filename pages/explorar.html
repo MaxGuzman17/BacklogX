@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" type="image/ico" href="../assets/img/favicon.png">
-    <title>Mi biblioteca | BacklogX</title>
+    <title>Games | BacklogX</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-dark text-white">
@@ -37,41 +37,42 @@
                         <a class="nav-link fw-bold px-3" href="../index.html">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold px-3" href="./explorar.html">EXPLORAR</a>
+                        <a class="nav-link active fw-bold px-3" href="explorar.html">EXPLORAR</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active fw-bold px-3" href="./miBacklog.html">MI BIBLIOTECA</a>
+                        <a class="nav-link fw-bold px-3" href="./miBacklog.html">MI BIBLIOTECA</a>
                     </li>
                 </ul>
+
+                <!-- buscador -->
+                <div class="d-flex justify-content-md-end flex-grow-1" style="flex-basis: 0;">
+                    <form class="position-relative w-100" style="max-width: 300px;" role="search">
+                        <input class="form-control buscador-nav ps-3" type="search" id="buscador"
+                            placeholder="Buscar juegos..." aria-label="Search">
+                        <i
+                            class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
+                    </form>
+                </div>
             </div>
         </div>
     </nav>
     <main class="container flex-grow-1 mt-5 pt-5">
         <header class="text-center py-5">
-            <h1 class="display-4 fw-black text-white">MI <span class="text-primary">BIBLIOTECA</span></h1>
-            <p class="text-secondary fs-5">Gestioná tus estados y organizá tus próximas partidas.</p>
+            <h1 class="display-4 fw-black text-white">DESCUBRE TU PRÓXIMA <span class="text-primary">AVENTURA</span>
+            </h1>
+            <p class="text-secondary fs-5">Explorá miles de títulos y gestiona tu colección personal.</p>
         </header>
-
-        <div class="d-flex flex-wrap gap-2 justify-content-center mb-5">
-            <button type="button" class="btn btn-outline-primary active px-4 rounded-pill fw-bold"
-                data-filter="all">TODOS</button>
-            <button type="button" class="btn btn-outline-primary" data-filter="COMPLETADOS">COMPLETADOS</button>
-            <button type="button" class="btn btn-outline-primary" data-filter="JUGANDO">JUGANDO</button>
-            <button type="button" class="btn btn-outline-primary" data-filter="backlog">BACKLOG</button>
-        </div>
-
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="backlogContenedor">
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedorCards">
             <!-- aca se cargan los juegos -->
         </div>
 
-        <!-- Paginacion hasta 4 -->
+        <!-- Paginación hasta 4 -->
         <nav class="my-5" aria-label="Navegación de juegos">
             <ul class="pagination justify-content-center" id="paginacion">
                 <!-- aca se generan los botones de paginación -->
             </ul>
         </nav>
     </main>
-
     <footer class="bg-black text-light mt-auto border-top border-primary border-opacity-25">
         <div class="container py-5">
             <div class="row gy-4 text-center text-md-start">
@@ -86,7 +87,6 @@
                     </p>
                 </div>
 
-
                 <!-- Links -->
                 <div class="col-md-4">
                     <h6 class="fw-bold text-white mb-3">NAVEGACIÓN</h6>
@@ -94,9 +94,9 @@
                         <li class="mb-2"><a href="../index.html"
                                 class="text-secondary text-decoration-none hover-primary">Inicio</a></li>
                         <li class="mb-2"><a href="./explorar.html"
-                                class="text-secondary text-decoration-none hover-primary">Explorar Catálogo</a></li>
+                                class="text-primary text-decoration-none hover-primary">Explorar Catálogo</a></li>
                         <li class="mb-2"><a href="./miBacklog.html"
-                                class="text-primary text-decoration-none hover-primary">Mi Biblioteca</a></li>
+                                class="text-secondary text-decoration-none hover-primary">Mi Biblioteca</a></li>
                         <li class="mb-2"><a href="https://rawg.io" target="_blank"
                                 class="text-secondary text-decoration-none hover-primary">RAWG API</a></li>
                     </ul>
@@ -119,6 +119,7 @@
             </div>
 
             <hr class="border-secondary opacity-25 my-4">
+
             <div
                 class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-secondary">
                 <span>© 2026 <strong>BacklogX</strong>. Desarrollado por y para gamers.</span>
@@ -136,7 +137,7 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../assets/js/miBacklog.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 
 </body>
