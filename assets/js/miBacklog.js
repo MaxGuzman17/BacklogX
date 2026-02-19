@@ -25,7 +25,7 @@ async function renderBacklog(filter = "all") {
             <div class="col-12 text-center text-white mt-5">
                 <i class="bi bi-controller fs-1 text-secondary opacity-50"></i>
                 <p class="fs-4 mt-3 text-secondary">No hay juegos en: <b class="text-primary">${filter.toUpperCase()}</b></p>
-                <a href="../index.html" class="btn btn-outline-primary mt-2">Explorar nuevos juegos</a>
+                <a href="../pages/explorar.html" class="btn btn-outline-primary mt-2">Explorar nuevos juegos</a>
             </div>
         `;
         return;
